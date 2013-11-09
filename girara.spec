@@ -1,11 +1,11 @@
 Summary:	User interface library based on GTK+
 Name:		girara
-Version:	0.1.7
-Release:	3
+Version:	0.1.8
+Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	https://pwmt.org/projects/girara/download/%{name}-%{version}.tar.gz
-# Source0-md5:	ff73bf26b56cdc28a4a2dcce46f4aa20
+# Source0-md5:	92d95412121406981bb4184ecd344975
 BuildRequires:	gtk+-devel
 BuildRequires:	pkg-config
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,15 +34,14 @@ This is the package containing the header files for girara library.
 %setup -q
 
 %{__sed} -i "s/^DFLAGS.*/DFLAGS=/" config.mk
-%if 0
-%{__sed} -i "s/^GIRARA_GTK_VERSION.*/GIRARA_GTK_VERSION ?= 3/" config.mk
-%endif
+%{__sed} -i "s/^GIRARA_GTK_VERSION.*/GIRARA_GTK_VERSION ?= 2/" config.mk
 
 %build
 export CFLAGS="%{rpmcflags}"
 export LDFLAGS="%{rpmldflags}"
 %{__make} \
-	LIBDIR=%{_libdir}
+	LIBDIR=%{_libdir}	\
+	GIRARA_GTK_VERSION=2
 
 %install
 rm -rf $RPM_BUILD_ROOT
