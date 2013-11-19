@@ -1,11 +1,11 @@
 Summary:	User interface library based on GTK+
 Name:		girara
-Version:	0.1.8
+Version:	0.1.9
 Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	https://pwmt.org/projects/girara/download/%{name}-%{version}.tar.gz
-# Source0-md5:	92d95412121406981bb4184ecd344975
+# Source0-md5:	0b51fc07b5763b506d46598576e5576e
 BuildRequires:	gtk+-devel
 BuildRequires:	pkg-config
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
